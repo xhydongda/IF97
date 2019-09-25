@@ -543,6 +543,8 @@ namespace IF97
 
         /// Get the mass density [kg/m^3] as a function of T [K] and p [Pa]
         public static double rhomass_Tp(double T, double p) { return RegionOutput(IF97Parameters.d, T, p, SatState.NONE); }
+        /// Get the specific volume [m^3/kg] as a function of T [K] and p [Pa]
+        public static double vmass_Tp(double T, double p) { return 1 / rhomass_Tp(T, p); }
         /// Get the mass enthalpy [J/kg] as a function of T [K] and p [Pa]
         public static double hmass_Tp(double T, double p) { return RegionOutput(IF97Parameters.h, T, p, SatState.NONE); }
         /// Get the mass entropy [J/kg/K] as a function of T [K] and p [Pa]
@@ -563,18 +565,18 @@ namespace IF97
         // ******************************************************************************** //
 
         /// Get the viscosity [Pa-s] as a function of T [K] and Rho [kg/m³]
-        static double visc_TRho(double T, double rho)
+        public static double visc_TRho(double T, double rho)
         {
             // Since we have density, we don't need to determine the region for viscosity.
             // All regions use base region equations for visc(T,rho).
             return R1.visc(T, rho);
         }
         /// Get the viscosity [Pa-s] as a function of T [K] and p [Pa]
-        static double visc_Tp(double T, double p) { return RegionOutput(IF97Parameters.mu, T, p, SatState.NONE); }
+        public static double visc_Tp(double T, double p) { return RegionOutput(IF97Parameters.mu, T, p, SatState.NONE); }
         /// Get the thermal conductivity [W/m-K] as a function of T [K] and p [Pa]
-        static double tcond_Tp(double T, double p) { return RegionOutput(IF97Parameters.k, T, p, SatState.NONE); }
+        public static double tcond_Tp(double T, double p) { return RegionOutput(IF97Parameters.tc, T, p, SatState.NONE); }
         /// Calculate the Prandtl number [dimensionless] as a function of T [K] and p [Pa]
-        static double prandtl_Tp(double T, double p)
+        public static double prandtl_Tp(double T, double p)
         {
             return visc_Tp(T, p) * cpmass_Tp(T, p) * 1000 / tcond_Tp(T, p);
         }
@@ -591,6 +593,15 @@ namespace IF97
         public static double hliq_p(double p) { return RegionOutput(IF97Parameters.h, Tsat97(p), p, SatState.LIQUID); }
         /// Get the saturated vapor mass enthalpy [J/kg] as a function of p [Pa]
         public static double hvap_p(double p) { return RegionOutput(IF97Parameters.h, Tsat97(p), p, SatState.VAPOR); }
+        /// Get the latent heat [J/kg] as a function of p [Pa]
+        public static double latentheat_p(double p) { return hvap_p(p) - hliq_p(p); }
+        // ******************************************************************************** //
+        /// Get the saturated liquid mass enthalpy [J/kg] as a function of T [K]
+        public static double hliq_T(double T) { return RegionOutput(IF97Parameters.h, T, psat97(T), SatState.LIQUID); }
+        /// Get the saturated vapor mass enthalpy [J/kg] as a function of T [K]
+        public static double hvap_T(double T) { return RegionOutput(IF97Parameters.h, T, psat97(T), SatState.VAPOR); }
+        /// Get the latent heat [J/kg] as a function of T [K]
+        public static double latentheat_T(double T) { return hvap_T(T) - hliq_T(T); }
         // ******************************************************************************** //
         /// Get the saturated liquid mass entropy [J/kg/K] as a function of p [Pa]
         public static double sliq_p(double p) { return RegionOutput(IF97Parameters.s, Tsat97(p), p, SatState.LIQUID); }
@@ -623,9 +634,9 @@ namespace IF97
         public static double viscvap_p(double p) { return RegionOutput(IF97Parameters.mu, Tsat97(p), p, SatState.VAPOR); }
         // ******************************************************************************** //
         /// Get the saturated liquid thermal conductivity [W/m-K] as a function of p [Pa]
-        public static double tcondliq_p(double p) { return RegionOutput(IF97Parameters.k, Tsat97(p), p, SatState.LIQUID); }
+        public static double tcondliq_p(double p) { return RegionOutput(IF97Parameters.tc, Tsat97(p), p, SatState.LIQUID); }
         /// Get the saturated vapor thermal conductivity [W/m-K] as a function of p [Pa]
-        public static double tcondvap_p(double p) { return RegionOutput(IF97Parameters.k, Tsat97(p), p, SatState.VAPOR); }
+        public static double tcondvap_p(double p) { return RegionOutput(IF97Parameters.tc, Tsat97(p), p, SatState.VAPOR); }
         // ******************************************************************************** //
         /// Calculate the saturated liquid Prandtl number [dimensionless] as a function of p [Pa]
         public static double prandtlliq_p(double p) { return viscliq_p(p) * cpliq_p(p) * 1000 / tcondliq_p(p); }
@@ -697,7 +708,7 @@ namespace IF97
         public static double pcrit { get { return Constants.Pcrit; } }
         public static double rhocrit { get { return Constants.Rhocrit; } }
         /// Get the Max and Min Temperatures and Pressures
-        public static double  Tmin { get { return Constants.Tmin; } }
+        public static double Tmin { get { return Constants.Tmin; } }
         public static double Pmin { get { return Constants.Pmin; } }
         public static double Tmax { get { return Constants.Tmax; } }
         public static double Pmax { get { return Constants.Pmax; } }

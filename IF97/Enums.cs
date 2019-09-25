@@ -27,6 +27,10 @@
         /// </summary>
         u,
         /// <summary>
+        /// 比体积.
+        /// </summary>
+        v,
+        /// <summary>
         /// 等压比热.
         /// </summary>
         cp,
@@ -39,9 +43,14 @@
         /// </summary>
         w,
         drhodp,
-        // Transport Property enumerations
+        /// <summary>
+        /// 动力粘度,μ.
+        /// </summary>
         mu,
-        k
+        /// <summary>
+        /// 热导率.
+        /// </summary>
+        tc
     }
 
     /// <summary>

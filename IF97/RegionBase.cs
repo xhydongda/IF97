@@ -179,7 +179,7 @@ namespace IF97
                 case IF97Parameters.cv: return cvmass(T, p);
                 case IF97Parameters.w: return speed_sound(T, p);
                 case IF97Parameters.mu: return visc(T, rhomass(T, p));   // Viscosity is a function of rho.
-                case IF97Parameters.k: return tcond(T, p, rhomass(T, p)); // Conductivity needs p and rho.
+                case IF97Parameters.tc: return tcond(T, p, rhomass(T, p)); // Conductivity needs p and rho.
                 case IF97Parameters.drhodp: return drhodp(T, p);       // For verification testing.
             }
             throw new ArgumentOutOfRangeException("Unable to match input parameters");
@@ -235,7 +235,7 @@ namespace IF97
             }
             return summer;
         }
-       protected double d2gammar_dTAU2(double T, double p)
+        protected double d2gammar_dTAU2(double T, double p)
         {
             double _PI = PIrterm(p), _TAU = TAUrterm(T);
             double summer = 0;

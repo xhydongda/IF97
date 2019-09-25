@@ -465,7 +465,7 @@ namespace IF97
                 case IF97Parameters.cv: return cvmass(T, rho);
                 case IF97Parameters.w: return speed_sound(T, rho);
                 case IF97Parameters.mu: return visc(T, rho);
-                case IF97Parameters.k: return tcond(T, p, rho);
+                case IF97Parameters.tc: return tcond(T, p, rho);
                 case IF97Parameters.drhodp: return drhodp(T, rho);
 
                 default:

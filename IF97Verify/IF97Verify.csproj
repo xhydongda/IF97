@@ -11,4 +11,8 @@
     <Compile Remove="JN.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\IF97\IF97.csproj" />
+  </ItemGroup>
+
 </Project>

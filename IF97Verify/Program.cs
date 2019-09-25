@@ -66,7 +66,7 @@ namespace IF97
             Console.Write("*****************************************************************\n");
             Console.Write("******************** Table 5 - Region 1 *************************\n");
             Console.Write("*****************************************************************\n");
-            Console.Write(String.Format("{0} {1:E8} {2:E8} {3:E8}\n", "v ", 1 / Api.rhomass_Tp(T1, p1), 1 / Api.rhomass_Tp(T2, p2), 1 / Api.rhomass_Tp(T3, p3)));
+            Console.Write(String.Format("{0} {1:E8} {2:E8} {3:E8}\n", "v ", Api.vmass_Tp(T1, p1), Api.vmass_Tp(T2, p2), Api.vmass_Tp(T3, p3)));
             Console.Write(String.Format("{0} {1:E8} {2:E8} {3:E8}\n", "h ", Api.hmass_Tp(T1, p1), Api.hmass_Tp(T2, p2), Api.hmass_Tp(T3, p3)));
             Console.Write(String.Format("{0} {1:E8} {2:E8} {3:E8}\n", "u ", Api.umass_Tp(T1, p1), Api.umass_Tp(T2, p2), Api.umass_Tp(T3, p3)));
             Console.Write(String.Format("{0} {1:E8} {2:E8} {3:E8}\n", "s ", Api.smass_Tp(T1, p1), Api.smass_Tp(T2, p2), Api.smass_Tp(T3, p3)));
@@ -78,7 +78,7 @@ namespace IF97
             Console.Write("***************************************************************\n");
             Console.Write("******************* Table 15 - Region 2 ***********************\n");
             Console.Write("***************************************************************\n");
-            Console.Write(String.Format("{0} {1:E8} {2:E8} {3:E8}\n", "v ", 1 / Api.rhomass_Tp(T1, p1), 1 / Api.rhomass_Tp(T2, p2), 1 / Api.rhomass_Tp(T3, p3)));
+            Console.Write(String.Format("{0} {1:E8} {2:E8} {3:E8}\n", "v ", Api.vmass_Tp(T1, p1), Api.vmass_Tp(T2, p2), Api.vmass_Tp(T3, p3)));
             Console.Write(String.Format("{0} {1:E8} {2:E8} {3:E8}\n", "h ", Api.hmass_Tp(T1, p1), Api.hmass_Tp(T2, p2), Api.hmass_Tp(T3, p3)));
             Console.Write(String.Format("{0} {1:E8} {2:E8} {3:E8}\n", "u ", Api.umass_Tp(T1, p1), Api.umass_Tp(T2, p2), Api.umass_Tp(T3, p3)));
             Console.Write(String.Format("{0} {1:E8} {2:E8} {3:E8}\n", "s ", Api.smass_Tp(T1, p1), Api.smass_Tp(T2, p2), Api.smass_Tp(T3, p3)));
@@ -109,7 +109,7 @@ namespace IF97
             Console.Write("***************************************************************\n");
             Console.Write("******************* Table 42 - Region 5 ***********************\n");
             Console.Write("***************************************************************\n");
-            Console.Write(String.Format("{0} {1:E8} {2:E8} {3:E8}\n", "v ", 1 / Api.rhomass_Tp(T1, p1), 1 / Api.rhomass_Tp(T2, p2), 1 / Api.rhomass_Tp(T3, p3)));
+            Console.Write(String.Format("{0} {1:E8} {2:E8} {3:E8}\n", "v ", Api.vmass_Tp(T1, p1), Api.vmass_Tp(T2, p2), Api.vmass_Tp(T3, p3)));
             Console.Write(String.Format("{0} {1:E8} {2:E8} {3:E8}\n", "h ", Api.hmass_Tp(T1, p1), Api.hmass_Tp(T2, p2), Api.hmass_Tp(T3, p3)));
             Console.Write(String.Format("{0} {1:E8} {2:E8} {3:E8}\n", "s ", Api.smass_Tp(T1, p1), Api.smass_Tp(T2, p2), Api.smass_Tp(T3, p3)));
             Console.Write(String.Format("{0} {1:E8} {2:E8} {3:E8}\n", "cp", Api.cpmass_Tp(T1, p1), Api.cpmass_Tp(T2, p2), Api.cpmass_Tp(T3, p3)));
