@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29318.209
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IF97", "IF97\IF97.csproj", "{ED8AFB09-5629-42F8-AACE-C8EB47A7FF13}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IF97Verify", "IF97Verify\IF97Verify.csproj", "{121BDD64-2618-4409-A784-A4A438263192}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED8AFB09-5629-42F8-AACE-C8EB47A7FF13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED8AFB09-5629-42F8-AACE-C8EB47A7FF13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED8AFB09-5629-42F8-AACE-C8EB47A7FF13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED8AFB09-5629-42F8-AACE-C8EB47A7FF13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{121BDD64-2618-4409-A784-A4A438263192}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{121BDD64-2618-4409-A784-A4A438263192}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{121BDD64-2618-4409-A784-A4A438263192}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{121BDD64-2618-4409-A784-A4A438263192}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A8644C2F-5135-4818-96AD-A97EC042C49A}
+	EndGlobalSection
+EndGlobal
